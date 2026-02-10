@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="2.0">
+  <Ad id="test-ad-001">
+    <InLine>
+      <AdSystem>VAST 2.0 Test Engine</AdSystem>
+      <AdTitle>Sample VAST 2.0 Advertisement</AdTitle>
+      <Description>Bu bir test reklamıdır.</Description>
+
+      <!-- Impression Tracking -->
+      <Impression><![CDATA[https://httpbin.org/get?event=impression&timestamp=__TIMESTAMP__]]></Impression>
+
+      <Creatives>
+        <Creative>
+          <Linear>
+            <!-- Video Duration -->
+            <Duration>00:00:15</Duration>
+
+            <!-- Tracking Events -->
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[https://httpbin.org/get?event=start&timestamp=__TIMESTAMP__]]></Tracking>
+              <Tracking event="firstQuartile"><![CDATA[https://httpbin.org/get?event=firstQuartile&timestamp=__TIMESTAMP__]]></Tracking>
+              <Tracking event="midpoint"><![CDATA[https://httpbin.org/get?event=midpoint&timestamp=__TIMESTAMP__]]></Tracking>
+              <Tracking event="thirdQuartile"><![CDATA[https://httpbin.org/get?event=thirdQuartile&timestamp=__TIMESTAMP__]]></Tracking>
+              <Tracking event="complete"><![CDATA[https://httpbin.org/get?event=complete&timestamp=__TIMESTAMP__]]></Tracking>
+              <Tracking event="pause"><![CDATA[https://httpbin.org/get?event=pause&timestamp=__TIMESTAMP__]]></Tracking>
+              <Tracking event="resume"><![CDATA[https://httpbin.org/get?event=resume&timestamp=__TIMESTAMP__]]></Tracking>
+            </TrackingEvents>
+
+            <!-- Video Clicks -->
+            <VideoClicks>
+              <ClickThrough><![CDATA[https://example.com]]></ClickThrough>
+              <ClickTracking><![CDATA[https://httpbin.org/get?event=click&timestamp=__TIMESTAMP__]]></ClickTracking>
+            </VideoClicks>
+
+            <!-- Media Files -->
+            <MediaFiles>
+              <!-- MP4 format (preferred) -->
+              <MediaFile type="video/mp4" width="1280" height="720" bitrate="2000" delivery="progressive">
+                <![CDATA[https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4]]>
+              </MediaFile>
+
+              <!-- WebM format (alternative) -->
+              <MediaFile type="video/webm" width="1280" height="720" bitrate="1800" delivery="progressive">
+                <![CDATA[https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.webm]]>
+              </MediaFile>
+            </MediaFiles>
+          </Linear>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>
